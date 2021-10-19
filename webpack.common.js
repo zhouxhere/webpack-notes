@@ -1,6 +1,7 @@
 const ESLintPlugin = require('eslint-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -26,6 +27,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.vue$/i,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'vue-loader',
+          },
+        ],
+      },
+      {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
@@ -50,19 +60,20 @@ module.exports = {
         },
       },
       {
-        test: /\.js|\.jsx$/i,
+        test: /\.js$/i,
         exclude: /(node_modules|bower_components)/,
         use: ['babel-loader'],
       },
     ],
   },
   plugins: [
+    new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       title: 'webpack note',
       template: './public/index.html',
     }),
     new ESLintPlugin({
-      extensions: ['js', 'jsx'],
+      extensions: ['js', 'vue'],
     }),
   ],
 }

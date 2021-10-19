@@ -1,5 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App.js'
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+new Vue({
+  router,
+  store,
+  render: (h) => h(App),
+}).$mount('#root')
