@@ -1,0 +1,68 @@
+{
+  "name": "webpack-notes",
+  "version": "1.0.0",
+  "description": "webpack notes",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "pre-commit": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhouxhere/webpack-notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhouxhere/webpack-notes/issues"
+  },
+  "homepage": "https://github.com/zhouxhere/webpack-notes#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/eslint-parser": "^7.15.8",
+    "@babel/eslint-plugin": "^7.14.5",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.4.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-webpack-plugin": "^3.0.1",
+    "html-webpack-plugin": "^5.3.2",
+    "husky": "^7.0.2",
+    "less": "^4.1.2",
+    "less-loader": "^10.0.1",
+    "lint-staged": "^11.2.3",
+    "postcss": "^8.3.9",
+    "postcss-loader": "^6.1.1",
+    "prettier": "^2.4.1",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "axios": "^0.23.0",
+    "classnames": "^2.3.1",
+    "core-js": "^3.18.3",
+    "moment": "^2.29.1",
+    "nprogress": "^0.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.5",
+    "react-router-dom": "^5.3.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,vue}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
